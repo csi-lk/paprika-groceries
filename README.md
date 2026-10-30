@@ -2,6 +2,8 @@
 
 A small grocery-list portal for [Paprika Recipe Manager](https://www.paprikaapp.com/). It reads your Paprika grocery list and gives every ingredient a one-tap **Woolworths** product search. Built with Bun and plain HTML/CSS/JS.
 
+**Live demo (sample data):** <https://csi-lk.github.io/paprika-groceries/>
+
 ![Static demo with sample data](docs/demo.png)
 
 ## Features
