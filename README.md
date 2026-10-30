@@ -16,7 +16,7 @@ A small grocery-list portal for [Paprika Recipe Manager](https://www.paprikaapp.
 
 ## Quick start
 
-Requires Bun 1.3 or newer.
+Requires Bun 1.4 or newer.
 
 ```sh
 bun install

@@ -19,7 +19,7 @@
     "github-pages"
   ],
   "engines": {
-    "bun": ">=1.3"
+    "bun": ">=1.4"
   },
   "scripts": {
     "start": "bun src/server.ts",
