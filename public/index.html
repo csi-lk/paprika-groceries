@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Paprika Groceries</title>
+    <meta name="description" content="Your Paprika grocery list, with one-tap Woolworths searches." />
+    <meta name="theme-color" content="#1b7a43" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="identity">
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9h16l-1.4 9.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 9Z" />
+              <path d="M8.5 9 11 3.8M15.5 9 13 3.8" />
+              <path d="M9.2 13v3M14.8 13v3" />
+            </svg>
+          </div>
+          <div class="identity-copy">
+            <p class="eyebrow">Paprika sync</p>
+            <h1>Groceries</h1>
+            <p class="subtitle" id="subtitle">Loading your list…</p>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <label class="list-picker" id="list-picker" hidden>
+            <span>List</span>
+            <select id="list-select" aria-label="Choose grocery list"></select>
+          </label>
+          <button class="refresh" id="refresh" type="button" aria-label="Refresh from Paprika" title="Refresh from Paprika">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 11a8 8 0 1 0-2.3 6.7" />
+              <path d="M20 4v7h-7" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="banner" id="banner" hidden></div>
+
+      <section class="progress-card" id="progress" hidden aria-label="Shopping progress">
+        <div class="progress-top">
+          <div>
+            <strong id="remaining">0 items left</strong>
+            <span id="progress-meta"></span>
+          </div>
+          <span class="progress-percent" id="progress-percent">0%</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-labelledby="remaining" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </section>
+
+      <section class="toolbar" id="toolbar" hidden>
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m16.5 16.5 4 4" />
+          </svg>
+          <input id="search" type="search" placeholder="Filter items…" autocomplete="off" spellcheck="false" />
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="show-done" />
+          <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+          <span>Show done</span>
+        </label>
+        <div class="toolbar-actions">
+          <button class="ghost-button" id="copy" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="8" y="8" width="12" height="12" rx="2" />
+              <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+            </svg>
+            Copy list
+          </button>
+          <button class="ghost-button" id="print" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 9V4h10v5" />
+              <rect x="4" y="9" width="16" height="7" rx="2" />
+              <path d="M7 14h10v6H7z" />
+            </svg>
+            Print
+          </button>
+        </div>
+      </section>
+
+      <main id="content" class="content" aria-live="polite">
+        <div class="loading"><span class="spinner" aria-hidden="true"></span> Loading groceries…</div>
+      </main>
+
+      <footer class="footer">
+        <p>Ticks and filters stay in this browser. Your list is read from Paprika Cloud Sync; nothing is written back.</p>
+        <p class="footer-sub">Woolworths links open a product search for the ingredient. Sign in there to add items to your cart.</p>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
